@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Start Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;500;600;700&display=swap" rel="stylesheet"> 
+    <!-- Start Style files -->
+    <link rel="stylesheet" href="CSS/normalize.css">
+    <link rel="stylesheet" href="CSS/register.css">
+    
+    <title>صفحة تسجيل حساب</title>
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo"><h1>Logo</h1></div>
+            <div class="toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav>
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#">خدماتنا</a></li>
+                <li><a href="#">منتجاتنا</a></li>
+                <li><a href="#">تواصل معنا</a></li>
+            </nav>
+        </div>
+    </header>
+    <section>
+        <div class="landing">
+            <img src="img/landing.jpg" alt="">
+            <div class="main_tx_container">
+                <h1>Logo</h1>
+                <div class="content_tx">
+                 <h1>اعطي نفسك قسط من الراحة واستمتع بخدمتنا</h1>
+                 <p class="welcome_tx">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum consectetur officia impedit quae sequi. Ex.</p>
+                    <h4>لديك حساب مسجل بالفعل ؟</h2>
+                    <h3><a href="#">دخول</a></h3>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="main_Sign">
+                <h1>نسجيل حساب جديد</h1>
+                <form dir="rtl" action="">
+                    <div class="full_name">
+                        <div class="Fname">
+                            <label for="FName">الاسم الاول</label>
+                            <input type="text" id="FName">
+                        </div>
+                        <div class="Lname">
+                              <label for="LName">الاسم الاخير</label>
+                              <input type="text" id="LName">                      
+                        </div>
+
+                    </div>
+                    <div class="email">
+                        <label for="Email">
+                            الايميل
+                        </label>
+                        <div class="checkProgressMail">
+                            <input type="email" id="Email">
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                    </div>
+                    
+                    <div class="password">
+                        <label for="password">الرقم السري</label>
+                        <div class="CheckProgPass">
+                            <input type="password" id="password">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="passRepeat">
+                        <label for="password">اعد ادخال الرقم السري</label>
+                        <div class="CheckProgPassrep">
+                            <input type="password" id="Repassword">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="finishing_form">
+                        <input type="checkbox"id="agrred">
+                        <label for="agrred"> بالضغط علي تسجيل اذا انت اوافق علي بنود الخدمة</label>
+                        <label><a href="#">قراءة بنود الخدمة</a></label>
+                        <br>
+                        <input type="submit" value="تسجيل" id="send">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="JS/register.js"></script>
+</body>
+</html>

@@ -1,0 +1,477 @@
+/* Start Glubal Ruls */
+* , *::after,*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    font-weight: 300;
+}
+.container{
+    width: calc(100% - 30px);
+    padding-left: 15px ;
+    padding-right: 15px ;
+    margin: auto;
+
+}
+@media (max-width:767px) {
+    .container{
+        width: calc(100% - 30px);
+        padding-left: 15px ;
+        padding-right: 15px ;
+    
+    }
+}
+@media (min-width:768px) {
+    .container{
+        width: calc(100% - 30px);
+        padding-left: 15px ;
+        padding-right: 15px ;
+        margin: auto;
+    
+    }
+}
+@media (min-width:992px) {
+    .container{
+        width: calc(100% - 30px);
+        padding-left: 15px ;
+        padding-right: 15px ;
+        margin: auto;
+    
+    }
+}
+@media (min-width:1200px) {
+    .container{
+        width: calc(100% - 30px);
+        padding-left: 15px ;
+        padding-right: 15px ;
+        margin: auto;
+    
+    }
+}
+:root{
+    --main-clr:#17D7A0;
+    --primary-clr:#f5f5f5;
+    --secondary-clr:#252525;
+    --tx-main-color:#000;
+    --tx-primary-color:#FFF;
+}
+/* End Glubal Ruls */
+header{
+    position: relative;
+    z-index: 100;
+    background-color: transparent;
+    height: 60px;
+    width: 100%;
+
+}
+header .container{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+header .container .logo{
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-clr);
+}
+header .container .logo h1{
+    font-weight: 700;
+}
+header .container .toggle{
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 45px;
+    width: 45px;
+    padding: 10px;
+    background-color: #eee;
+    cursor: pointer;
+}
+header .container .toggle span{
+    width: 100%;
+    height: 4px;
+    background-color: var(--main-clr);
+}
+header .container nav.active{
+    display: flex;
+}
+header .container nav{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 60px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width:767px) {
+
+    header .container .toggle{
+        display: flex;
+    }
+   
+    header .container nav{
+        position: absolute;
+        z-index: 100;
+        top: 100%;
+        left: 50%;
+        height: fit-content;
+        width: 100%;
+        flex-direction: column;
+        transform: translateX(-50%);
+        background-color: #eee;
+        box-shadow: 0 5px 15px 0 #e4e4e4;
+        display: none;
+    }
+
+    
+}
+header .container nav li{
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+header .container nav li a{
+    position: relative;
+    text-decoration: none;
+    padding: 15px 20px;
+    color: var(--tx-main-color);
+    font-weight: 400;
+}
+header .container nav li a::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 4px;
+    background-color: var(--main-clr);
+    transform: translateX(-50%);
+    transition: 0.3s ease-in-out;
+}
+header .container nav li a:hover:after{
+    width: 80%;
+}
+
+section {
+    position: relative;
+    min-height: calc(100vh - 60px);
+    display: flex;
+}
+
+section .landing{
+    position: relative;
+    width: calc(100% /2);
+    height: fit-content;
+    object-fit: cover;
+    color: var(--tx-primary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 15px 15px 0;
+    overflow: hidden;
+}
+
+section .landing img{
+    max-width: 100%;
+    object-fit: cover;
+}
+section .landing .main_tx_container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    min-height: 70vh;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    backdrop-filter: blur(16px);
+    transform: translate(-50% , -50%);
+}
+@media (max-width:992px) {
+    section .landing{
+        display: none;
+    }
+    section .landing img{
+        display: none;
+    }
+}
+section .landing .main_tx_container::before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    background-color: var(--main-clr);
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    transform: translate(-50% , -50%);
+    
+}
+section .landing .main_tx_container > h1:first-child{
+    background-color: #17d7a191;
+    padding: 20px;
+    text-transform: uppercase;
+    align-self: flex-start;
+    backdrop-filter: blur(16px);
+    width: 100%;
+}
+section .landing .main_tx_container .content_tx{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+section .landing > .main_tx_container > .content_tx h1:first-child{
+    font-size: 1.3em;
+    font-weight: 400;
+    max-width: 500px;
+    background-color: transparent;
+}
+section .landing > .main_tx_container > .content_tx p{
+    font-weight: 400;
+    line-height: 20px;
+    padding: 15px;
+    width: 100%;
+    color: var(--tx-primary-color-color);
+}
+section .landing > .main_tx_container > .content_tx h4{
+    font-weight: bold;
+    padding: 20px 0;
+}
+section .landing > .main_tx_container > .content_tx h3 a{
+    text-decoration: none;
+    color: var(--tx-primary-color);
+    padding: 10px;
+}
+section .landing > .main_tx_container > .content_tx h3 a:hover{
+    opacity: 0.7;
+}
+section .container{
+    position: relative;
+    min-height: inherit;
+    width: calc(100% / 2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--tx-main-color);
+    
+}
+section .container .main_Sign{
+    max-width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width:992px) {
+    section .container .main_Sign{
+        justify-content: flex-start;
+    
+    }
+
+}
+@media (max-width:767px) {
+    section .container .main_Sign{
+        justify-content: space-around;
+    
+    }
+
+}
+@media (max-width:992px) {
+    section .container .main_Sign h1{
+        font-size: 1.2em;
+    }
+
+    
+}
+section .container .main_Sign form{
+    display: flex;
+    padding: 20px 0;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+section .container .main_Sign form input{
+    border: 2px #eeeeee solid;
+}
+section .container .main_Sign form input:focus{
+    outline: none;
+    /* border-bottom-color: green; */
+    box-shadow: 0 0 10px 0px #f9f9f9;
+}
+section .container .main_Sign form .full_name ,
+section .container .main_Sign form .password  ,
+section .container .main_Sign form .passRepeat  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 0;
+
+}
+section .container .main_Sign form .full_name label,
+section .container .main_Sign form .email label,
+section .container .main_Sign form .password label,
+section .container .main_Sign form .passRepeat label{
+    font-size: 14px;
+    font-weight: 400;
+    padding: 0 5px 0 10px;
+}
+section .container .main_Sign form .full_name input,
+section .container .main_Sign form .email input ,
+section .container .main_Sign form .password input,
+section .container .main_Sign form .passRepeat input{
+    position: relative;
+    padding: 8px 10px;
+    font-size: 18px;
+}
+section .container .main_Sign form .email {
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+section .container .main_Sign form .password #password{
+    position: relative;
+}
+section .container .main_Sign form .password #password::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: green;
+    width: 100%;
+    height: 4px;
+}
+
+section .container .main_Sign form .password {
+    padding: 20px 0;
+    width: 358px;
+}
+section .container .main_Sign form .passRepeat {
+    padding: 20px 0;
+
+}
+@media (max-width:767px) {
+    section .container .main_Sign form .passRepeat{
+        flex-wrap: nowrap;
+    }
+}
+section .container .main_Sign form .full_name {
+    padding: 20px 0;
+
+}
+
+section .container .main_Sign form .full_name input{
+    max-width: 125px;
+    margin-bottom: 10px;
+}
+@media (max-width:768px) {
+    section .container .main_Sign form .full_name input{
+        flex-grow: 1;
+        max-width: 100%;
+    }
+    
+}
+section .container .main_Sign form .email input{
+    padding-left: 15px;
+}
+@media (max-width:768px) {
+    section .container .main_Sign form .email {
+        width: 100%;
+    }
+    section .container .main_Sign form .email input{
+        align-self: flex-end;
+    }
+
+}
+section .container .main_Sign form .password label {
+    margin: 15px 0;
+}
+section .container .main_Sign form .password input {
+    flex-grow: 1;
+}
+section .container .main_Sign form .finishing_form {
+    padding: 15px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+section .container .main_Sign form .finishing_form label{
+    padding: 5px 20px;
+    font-weight: 400;
+}
+section .container .main_Sign form .finishing_form label a{
+    text-decoration: none;
+    color: var(--main-clr);
+}
+section .container .main_Sign form .finishing_form input[type="submit"]{
+    background-color: var(--main-clr);
+    color: var(--tx-primary-color);
+    padding: 15px 30px;
+    border: none;
+    margin: 15px 0;
+    width: 100%;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 15px;
+}
+section .container .main_Sign form .finishing_form input[type="submit"]:hover{
+    opacity: 0.7;
+    box-shadow: 0 0 15px 0 #c4c4c4;
+}
+section .container .main_Sign form .finishing_form input[type="checkbox"]{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+} 
+
+section .container .main_Sign form .password input[type="password"]{
+    position: relative;
+}
+
+/* Progress Logic Check input */
+section .container .main_Sign form .email .checkProgressMail ,
+section .container .main_Sign form .password .CheckProgPass  ,
+section .container .main_Sign form .passRepeat .CheckProgPassrep
+{
+    display: flex;
+    flex-direction: column;
+}
+section .container .main_Sign form .email .checkProgressMail span:first-of-type ,
+section .container .main_Sign form .password .CheckProgPass span:first-of-type  ,
+section .container .main_Sign form .passRepeat .CheckProgPassrep span:first-of-type{
+    width: 0;
+    height: 4px;
+    background-color: transparent;
+    border-radius: 500px;
+    transition: width 0.3s cubic-bezier(.79,.14,.15,.86) , background-color 0.3s ease-in-out;
+}
+section .container .main_Sign form .email .checkProgressMail span:last-of-type   ,
+section .container .main_Sign form .password .CheckProgPass span:last-of-type   ,
+section .container .main_Sign form .passRepeat .CheckProgPassrep span:last-of-type{
+    padding: 10px 0;
+    font-size: 15px;
+    font-weight: 400;
+}
+/* End Progress Logic Check input */
