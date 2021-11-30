@@ -52,6 +52,7 @@ body{
 }
 :root{
     --main-clr:#17D7A0;
+    --overlay-clr:#17d7a163;
     --primary-clr:#f5f5f5;
     --secondary-clr:#252525;
     --tx-main-color:#000;
@@ -157,6 +158,7 @@ header .container nav li a::after{
     background-color: var(--main-clr);
     transform: translateX(-50%);
     transition: 0.3s ease-in-out;
+    border-radius: 50px;
 }
 header .container nav li a:hover:after{
     width: 80%;
@@ -164,143 +166,126 @@ header .container nav li a:hover:after{
 
 section {
     position: relative;
-    min-height: calc(100vh - 60px);
     display: flex;
-}
-
-section .landing{
-    position: relative;
-    width: calc(100% /2);
-    height: fit-content;
-    object-fit: cover;
-    color: var(--tx-primary-color);
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 0 15px 15px 0;
+    flex-wrap: nowrap;
+    min-height: calc(100vh -60px);
+    width: 100%;
     overflow: hidden;
 }
-
-section .landing img{
-    max-width: 100%;
+section .landing {
+    position: relative;
+    max-width: 50%;
+    max-height: calc(100vh - 60px);
     object-fit: cover;
+    align-self: flex-start;
+    border-radius: 6px;
+    overflow:hidden;
+}
+@media (max-width:768px) {
+    section .landing {
+        display: none;
+    }
+    
+}
+section .landing .Land_image{
+    max-width: 100%;
 }
 section .landing .main_tx_container{
     position: absolute;
-    top: 50%;
-    left: 50%;
     z-index: 2;
-    min-height: 70vh;
-    width: 70%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color:var(--overlay-clr);
+    width: 100%;
+    padding: 15px;
+    height: calc(100vh + 60px);
+
+}
+.landing .main_tx_container > .UserICO{
+   font-size: 200px;
+   color: var(--primary-clr);
+    border: 5px dashed ;
+    border-radius: 50%;
+    padding: 15px;
+    backdrop-filter: blur(10px);
+    background-color: var(--overlay-clr);
+}
+.landing .main_tx_container .content_tx {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    backdrop-filter: blur(16px);
-    transform: translate(-50% , -50%);
+
 }
-@media (max-width:992px) {
-    section .landing{
-        display: none;
-    }
-    section .landing img{
-        display: none;
-    }
+.landing .main_tx_container .content_tx h1{
+    color: var(--tx-primary-color);
+    font-size: 1.5em;
+    text-align: center;
 }
-section .landing .main_tx_container::before{
+.landing .main_tx_container .content_tx p{
+    font-size: 16px;
+    font-weight: bold;
+    text-align: justify;
+    max-width: 450px;
+    margin: 15px auto;
+    color: var(--tx-primary-color);
+}
+.landing .main_tx_container .content_tx h4{
+    color: var(--tx-primary-color);
+    font-size: 1.2em;
+    font-weight: normal;
+    margin: 15px auto;
+}
+.landing .main_tx_container .content_tx h3{
+    margin: 15px auto;
+    
+}
+.landing .main_tx_container .content_tx h3 a{
+    text-decoration: none;
+    color: var(--tx-primary-color);
+}
+.landing .main_tx_container .content_tx h3 a:hover{
+    opacity: 0.8;
+}
+
+section .container {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+section .container .main_Sign{
+
+    max-width: 420px;
+}
+
+section .container .main_Sign h1{
+    position: relative;
+    text-align: center;
+    padding: 15px;
+}
+section .container .main_Sign h1::after{
     content: "";
     position: absolute;
     z-index: -1;
     top: 50%;
     left: 50%;
-    background-color: var(--main-clr);
-    opacity: 0.5;
     width: 100%;
     height: 100%;
-    border-radius: 15px;
-    transform: translate(-50% , -50%);
-    
-}
-section .landing .main_tx_container > h1:first-child{
-    background-color: #17d7a191;
-    padding: 20px;
-    text-transform: uppercase;
-    align-self: flex-start;
-    backdrop-filter: blur(16px);
-    width: 100%;
-}
-section .landing .main_tx_container .content_tx{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
-section .landing > .main_tx_container > .content_tx h1:first-child{
-    font-size: 1.3em;
-    font-weight: 400;
-    max-width: 500px;
-    background-color: transparent;
-}
-section .landing > .main_tx_container > .content_tx p{
-    font-weight: 400;
-    line-height: 20px;
-    padding: 15px;
-    width: 100%;
-    color: var(--tx-primary-color-color);
-}
-section .landing > .main_tx_container > .content_tx h4{
-    font-weight: bold;
-    padding: 20px 0;
-}
-section .landing > .main_tx_container > .content_tx h3 a{
-    text-decoration: none;
-    color: var(--tx-primary-color);
-    padding: 10px;
-}
-section .landing > .main_tx_container > .content_tx h3 a:hover{
-    opacity: 0.7;
-}
-section .container{
-    position: relative;
-    min-height: inherit;
-    width: calc(100% / 2);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: var(--tx-main-color);
-    
-}
-section .container .main_Sign{
-    max-width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-@media (max-width:992px) {
-    section .container .main_Sign{
-        justify-content: flex-start;
-    
-    }
+    background-color: var(--main-clr);
+    transform: translate(-50% ,-50%) skew(20deg);
 
 }
-@media (max-width:767px) {
-    section .container .main_Sign{
-        justify-content: space-around;
-    
-    }
 
-}
-@media (max-width:992px) {
-    section .container .main_Sign h1{
-        font-size: 1.2em;
-    }
 
-    
-}
+
 section .container .main_Sign form{
     display: flex;
     padding: 20px 0;
@@ -308,6 +293,7 @@ section .container .main_Sign form{
     justify-content: flex-start;
     flex-direction: row;
     flex-wrap: wrap;
+    
 }
 section .container .main_Sign form input{
     border: 2px #eeeeee solid;
@@ -324,7 +310,8 @@ section .container .main_Sign form .passRepeat  {
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
-    padding: 20px 0;
+    width: 100%;
+    margin: 15px auto;
 
 }
 section .container .main_Sign form .full_name label,
@@ -333,7 +320,7 @@ section .container .main_Sign form .password label,
 section .container .main_Sign form .passRepeat label{
     font-size: 14px;
     font-weight: 400;
-    padding: 0 5px 0 10px;
+    padding: 0 5px;
 }
 section .container .main_Sign form .full_name input,
 section .container .main_Sign form .email input ,
@@ -342,15 +329,18 @@ section .container .main_Sign form .passRepeat input{
     position: relative;
     padding: 8px 10px;
     font-size: 18px;
+    
 }
 section .container .main_Sign form .email {
-    padding: 20px 0;
+    
     width: 100%;
+    margin: 15px auto;
     display: flex;
     align-items: center;
 }
 section .container .main_Sign form .password #password{
     position: relative;
+    
 }
 section .container .main_Sign form .password #password::after{
     content: "";
@@ -363,25 +353,21 @@ section .container .main_Sign form .password #password::after{
 }
 
 section .container .main_Sign form .password {
-    padding: 20px 0;
-    width: 358px;
+    margin: auto 0;
 }
-section .container .main_Sign form .passRepeat {
-    padding: 20px 0;
 
-}
 @media (max-width:767px) {
     section .container .main_Sign form .passRepeat{
         flex-wrap: nowrap;
     }
 }
 section .container .main_Sign form .full_name {
-    padding: 20px 0;
+
 
 }
 
 section .container .main_Sign form .full_name input{
-    max-width: 125px;
+    max-width: 100%;
     margin-bottom: 10px;
 }
 @media (max-width:768px) {
@@ -434,7 +420,7 @@ section .container .main_Sign form .finishing_form input[type="submit"]{
     width: 100%;
     font-weight: 700;
     cursor: pointer;
-    border-radius: 15px;
+    border-radius: 6px;
 }
 section .container .main_Sign form .finishing_form input[type="submit"]:hover{
     opacity: 0.7;
@@ -448,7 +434,7 @@ section .container .main_Sign form .finishing_form input[type="checkbox"]{
 
 section .container .main_Sign form .password input[type="password"]{
     position: relative;
-}
+} */
 
 /* Progress Logic Check input */
 section .container .main_Sign form .email .checkProgressMail ,
