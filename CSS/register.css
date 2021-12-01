@@ -434,7 +434,7 @@ section .container .main_Sign form .finishing_form input[type="checkbox"]{
 
 section .container .main_Sign form .password input[type="password"]{
     position: relative;
-} */
+} 
 
 /* Progress Logic Check input */
 section .container .main_Sign form .email .checkProgressMail ,
